@@ -1,0 +1,2587 @@
+[
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_add_51__bad.ll",
+      "--function",
+      "CWE190_Integer_Overflow__int_rand_add_51b_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__int_rand_add_51__bad__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 21.71,
+    "side": "bad",
+    "up": 0,
+    "sink": "CWE190_Integer_Overflow__int_rand_add_51b_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedOverflow feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#32 function=CWE190_Integer_Overflow__int_rand_add_51b_badSink(int) context=root:?CWE190_Integer_Overflow__int_rand_add_51_bad@@YAXXZ/?CWE190_Integer_Overflow__int_rand_add_51_bad@@YAXXZ:call23 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s04/CWE190_Integer_Overflow__int_rand_add_51b.c:26 instruction=  %add = add i32 %data, 1, !dbg !307",
+        "reason": "SignedOverflow",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE190_Integer_Overflow__int_rand_add_51b_badSink(int).data i32 unsigned=2147483647 signed=2147483647"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE190_Integer_Overflow__int_rand_add_51b_badSink(int)",
+          "  Path: Block: CWE190_Integer_Overflow__int_rand_add_51b_badSink(int):%entry",
+          "  Path: Risk operation:   %add = add i32 %data, 1, !dbg !307 at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s04\\CWE190_Integer_Overflow__int_rand_add_51b.c:26"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51b_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: CWE190_Integer_Overflow__int_rand_add_51_bad(void):call ?CWE190_Integer_Overflow__int_rand_add_51b_badSink@@YAXH@Z arg0 context=root:?CWE190_Integer_Overflow__int_rand_add_51_bad@@YAXXZ call=?CWE190_Integer_Overflow__int_rand_add_51_bad@@YAXXZ:call23"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51b_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE190_Integer_Overflow__int_rand_add_51",
+    "cwe": 190,
+    "variant": "51"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_add_51__bad.ll",
+      "--function",
+      "CWE190_Integer_Overflow__int_rand_add_51b_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__int_rand_add_51__bad__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 129.91,
+    "side": "bad",
+    "up": 3,
+    "sink": "CWE190_Integer_Overflow__int_rand_add_51b_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedOverflow feasibility=unknown status=unknown source-type=signed node=#32 function=CWE190_Integer_Overflow__int_rand_add_51b_badSink(int) context=root:?CWE190_Integer_Overflow__int_rand_add_51_bad@@YAXXZ/?CWE190_Integer_Overflow__int_rand_add_51_bad@@YAXXZ:call23 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s04/CWE190_Integer_Overflow__int_rand_add_51b.c:26 instruction=  %add = add i32 %data, 1, !dbg !307",
+        "reason": "SignedOverflow",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: risk depends on unmodeled control or operands before the target operation",
+          "  Unmodeled dependency: unmodeled return value from external call before target: rand"
+        ],
+        "unexplored": [],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: external call before target: rand",
+          "  Model note: risk depends on unmodeled control or operands before the target operation",
+          "  Model note: unmodeled return value from external call before target: rand",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "unknown",
+    "depth_boundaries": [],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 13,
+    "candidate_line": "Arithmetic verification: candidates=13 solver-checks=13",
+    "case": "CWE190_Integer_Overflow__int_rand_add_51",
+    "cwe": 190,
+    "variant": "51"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_add_51__good.ll",
+      "--function",
+      "CWE190_Integer_Overflow__int_rand_add_51b_goodB2GSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__int_rand_add_51__good__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 25.5,
+    "side": "good",
+    "up": 0,
+    "sink": "CWE190_Integer_Overflow__int_rand_add_51b_goodB2GSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedOverflow feasibility=scoped-unreachable status=scoped-unreachable source-type=signed node=#33 function=CWE190_Integer_Overflow__int_rand_add_51b_goodB2GSink(int) context=root:?goodB2G@@YAXXZ/?goodB2G@@YAXXZ:call23 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s04/CWE190_Integer_Overflow__int_rand_add_51b.c:51 instruction=  %add = add i32 %data, 1, !dbg !314",
+        "reason": "SignedOverflow",
+        "status": "scoped-unreachable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51b_goodB2GSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: external call before target: printLine",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "scoped-unreachable",
+    "depth_boundaries": [
+      "  depth boundary: goodB2G(void):call ?CWE190_Integer_Overflow__int_rand_add_51b_goodB2GSink@@YAXH@Z arg0 context=root:?goodB2G@@YAXXZ call=?goodB2G@@YAXXZ:call23"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51b_goodB2GSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE190_Integer_Overflow__int_rand_add_51",
+    "cwe": 190,
+    "variant": "51"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_add_51__good.ll",
+      "--function",
+      "CWE190_Integer_Overflow__int_rand_add_51b_goodB2GSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__int_rand_add_51__good__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 61.26,
+    "side": "good",
+    "up": 3,
+    "sink": "CWE190_Integer_Overflow__int_rand_add_51b_goodB2GSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedOverflow feasibility=unknown status=unknown source-type=signed node=#40 function=CWE190_Integer_Overflow__int_rand_add_51b_goodB2GSink(int) context=root:?CWE190_Integer_Overflow__int_rand_add_51_good@@YAXXZ/?CWE190_Integer_Overflow__int_rand_add_51_good@@YAXXZ:call1/?goodB2G@@YAXXZ:call23 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s04/CWE190_Integer_Overflow__int_rand_add_51b.c:51 instruction=  %add = add i32 %data, 1, !dbg !314",
+        "reason": "SignedOverflow",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: unexplored path: target call context cannot be expanded within the selected data slice"
+        ],
+        "unexplored": [
+          "  Unexplored path: target call context cannot be expanded within the selected data slice"
+        ],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: call dependency outside selected data slice: CWE190_Integer_Overflow__int_rand_add_51_good(void)",
+          "  Model note: unexplored path: target call context cannot be expanded within the selected data slice",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "unknown",
+    "depth_boundaries": [],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_add_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 13,
+    "candidate_line": "Arithmetic verification: candidates=13 solver-checks=13",
+    "case": "CWE190_Integer_Overflow__int_rand_add_51",
+    "cwe": 190,
+    "variant": "51"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_multiply_52__bad.ll",
+      "--function",
+      "CWE190_Integer_Overflow__int_rand_multiply_52c_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__int_rand_multiply_52__bad__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 23.7,
+    "side": "bad",
+    "up": 0,
+    "sink": "CWE190_Integer_Overflow__int_rand_multiply_52c_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedOverflow feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#3 function=CWE190_Integer_Overflow__int_rand_multiply_52c_badSink(int) context=root:?CWE190_Integer_Overflow__int_rand_multiply_52b_badSink@@YAXH@Z/?CWE190_Integer_Overflow__int_rand_multiply_52b_badSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s04/CWE190_Integer_Overflow__int_rand_multiply_52c.c:27 instruction=  %mul = mul i32 %data, 2, !dbg !313",
+        "reason": "SignedOverflow",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE190_Integer_Overflow__int_rand_multiply_52c_badSink(int).data i32 unsigned=1073741824 signed=1073741824"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE190_Integer_Overflow__int_rand_multiply_52c_badSink(int)",
+          "  Path: Block: CWE190_Integer_Overflow__int_rand_multiply_52c_badSink(int):%entry",
+          "  Path: Branch true at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s04\\CWE190_Integer_Overflow__int_rand_multiply_52c.c:24",
+          "  Path: Block: CWE190_Integer_Overflow__int_rand_multiply_52c_badSink(int):%if.then",
+          "  Path: Risk operation:   %mul = mul i32 %data, 2, !dbg !313 at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s04\\CWE190_Integer_Overflow__int_rand_multiply_52c.c:27"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52c_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: CWE190_Integer_Overflow__int_rand_multiply_52b_badSink(int):call ?CWE190_Integer_Overflow__int_rand_multiply_52c_badSink@@YAXH@Z arg0 context=root:?CWE190_Integer_Overflow__int_rand_multiply_52b_badSink@@YAXH@Z call=?CWE190_Integer_Overflow__int_rand_multiply_52b_badSink@@YAXH@Z:call0"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52c_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE190_Integer_Overflow__int_rand_multiply_52",
+    "cwe": 190,
+    "variant": "52"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_multiply_52__bad.ll",
+      "--function",
+      "CWE190_Integer_Overflow__int_rand_multiply_52c_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__int_rand_multiply_52__bad__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 271.57,
+    "side": "bad",
+    "up": 3,
+    "sink": "CWE190_Integer_Overflow__int_rand_multiply_52c_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedOverflow feasibility=unknown status=unknown source-type=signed node=#34 function=CWE190_Integer_Overflow__int_rand_multiply_52c_badSink(int) context=root:?CWE190_Integer_Overflow__int_rand_multiply_52_bad@@YAXXZ/?CWE190_Integer_Overflow__int_rand_multiply_52_bad@@YAXXZ:call23/?CWE190_Integer_Overflow__int_rand_multiply_52b_badSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s04/CWE190_Integer_Overflow__int_rand_multiply_52c.c:27 instruction=  %mul = mul i32 %data, 2, !dbg !313",
+        "reason": "SignedOverflow",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: risk depends on unmodeled control or operands before the target operation",
+          "  Unmodeled dependency: unmodeled return value from external call before target: rand"
+        ],
+        "unexplored": [],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: external call before target: rand",
+          "  Model note: risk depends on unmodeled control or operands before the target operation",
+          "  Model note: unmodeled return value from external call before target: rand",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "unknown",
+    "depth_boundaries": [],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 13,
+    "candidate_line": "Arithmetic verification: candidates=13 solver-checks=13",
+    "case": "CWE190_Integer_Overflow__int_rand_multiply_52",
+    "cwe": 190,
+    "variant": "52"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_multiply_52__good.ll",
+      "--function",
+      "CWE190_Integer_Overflow__int_rand_multiply_52c_goodB2GSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__int_rand_multiply_52__good__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 31.76,
+    "side": "good",
+    "up": 0,
+    "sink": "CWE190_Integer_Overflow__int_rand_multiply_52c_goodB2GSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedOverflow feasibility=scoped-unreachable status=scoped-unreachable source-type=signed node=#4 function=CWE190_Integer_Overflow__int_rand_multiply_52c_goodB2GSink(int) context=root:?CWE190_Integer_Overflow__int_rand_multiply_52b_goodB2GSink@@YAXH@Z/?CWE190_Integer_Overflow__int_rand_multiply_52b_goodB2GSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s04/CWE190_Integer_Overflow__int_rand_multiply_52c.c:55 instruction=  %mul = mul i32 %data, 2, !dbg !322",
+        "reason": "SignedOverflow",
+        "status": "scoped-unreachable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52c_goodB2GSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: external call before target: printLine",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "scoped-unreachable",
+    "depth_boundaries": [
+      "  depth boundary: CWE190_Integer_Overflow__int_rand_multiply_52b_goodB2GSink(int):call ?CWE190_Integer_Overflow__int_rand_multiply_52c_goodB2GSink@@YAXH@Z arg0 context=root:?CWE190_Integer_Overflow__int_rand_multiply_52b_goodB2GSink@@YAXH@Z call=?CWE190_Integer_Overflow__int_rand_multiply_52b_goodB2GSink@@YAXH@Z:call0"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52c_goodB2GSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE190_Integer_Overflow__int_rand_multiply_52",
+    "cwe": 190,
+    "variant": "52"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_multiply_52__good.ll",
+      "--function",
+      "CWE190_Integer_Overflow__int_rand_multiply_52c_goodB2GSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__int_rand_multiply_52__good__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 61.2,
+    "side": "good",
+    "up": 3,
+    "sink": "CWE190_Integer_Overflow__int_rand_multiply_52c_goodB2GSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedOverflow feasibility=unknown status=unknown source-type=signed node=#46 function=CWE190_Integer_Overflow__int_rand_multiply_52c_goodB2GSink(int) context=root:?CWE190_Integer_Overflow__int_rand_multiply_52_good@@YAXXZ/?CWE190_Integer_Overflow__int_rand_multiply_52_good@@YAXXZ:call1/?goodB2G@@YAXXZ:call23/?CWE190_Integer_Overflow__int_rand_multiply_52b_goodB2GSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s04/CWE190_Integer_Overflow__int_rand_multiply_52c.c:55 instruction=  %mul = mul i32 %data, 2, !dbg !322",
+        "reason": "SignedOverflow",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: unexplored path: target call context cannot be expanded within the selected data slice"
+        ],
+        "unexplored": [
+          "  Unexplored path: target call context cannot be expanded within the selected data slice"
+        ],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: call dependency outside selected data slice: CWE190_Integer_Overflow__int_rand_multiply_52_good(void)",
+          "  Model note: unexplored path: target call context cannot be expanded within the selected data slice",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "unknown",
+    "depth_boundaries": [],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_multiply_52_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 13,
+    "candidate_line": "Arithmetic verification: candidates=13 solver-checks=13",
+    "case": "CWE190_Integer_Overflow__int_rand_multiply_52",
+    "cwe": 190,
+    "variant": "52"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__bad.ll",
+      "--function",
+      "CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__bad__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 18.32,
+    "side": "bad",
+    "up": 0,
+    "sink": "CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=UnsignedWrap feasibility=boundary-triggerable status=boundary-triggerable source-type=unsigned node=#2 function=CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink(unsigned int) context=root:?CWE190_Integer_Overflow__unsigned_int_rand_add_54d_badSink@@YAXI@Z/?CWE190_Integer_Overflow__unsigned_int_rand_add_54d_badSink@@YAXI@Z:call0 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s05/CWE190_Integer_Overflow__unsigned_int_rand_add_54e.c:26 instruction=  %add = add i32 %data, 1, !dbg !322",
+        "reason": "UnsignedWrap",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink(unsigned int).data i32 unsigned=4294967295 signed=-1"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink(unsigned int)",
+          "  Path: Block: CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink(unsigned int):%entry",
+          "  Path: Risk operation:   %add = add i32 %data, 1, !dbg !322 at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54e.c:26"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink(unsigned int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: CWE190_Integer_Overflow__unsigned_int_rand_add_54d_badSink(unsigned int):call ?CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink@@YAXI@Z arg0 context=root:?CWE190_Integer_Overflow__unsigned_int_rand_add_54d_badSink@@YAXI@Z call=?CWE190_Integer_Overflow__unsigned_int_rand_add_54d_badSink@@YAXI@Z:call0"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink(unsigned int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE190_Integer_Overflow__unsigned_int_rand_add_54",
+    "cwe": 190,
+    "variant": "54"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__bad.ll",
+      "--function",
+      "CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__bad__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 19.05,
+    "side": "bad",
+    "up": 3,
+    "sink": "CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=UnsignedWrap feasibility=boundary-triggerable status=boundary-triggerable source-type=unsigned node=#35 function=CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink(unsigned int) context=root:?CWE190_Integer_Overflow__unsigned_int_rand_add_54_bad@@YAXXZ/?CWE190_Integer_Overflow__unsigned_int_rand_add_54_bad@@YAXXZ:call23/?CWE190_Integer_Overflow__unsigned_int_rand_add_54b_badSink@@YAXI@Z:call0/?CWE190_Integer_Overflow__unsigned_int_rand_add_54c_badSink@@YAXI@Z:call0/?CWE190_Integer_Overflow__unsigned_int_rand_add_54d_badSink@@YAXI@Z:call0 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s05/CWE190_Integer_Overflow__unsigned_int_rand_add_54e.c:26 instruction=  %add = add i32 %data, 1, !dbg !322",
+        "reason": "UnsignedWrap",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE190_Integer_Overflow__unsigned_int_rand_add_54b_badSink(unsigned int).data i32 unsigned=4294967295 signed=-1"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE190_Integer_Overflow__unsigned_int_rand_add_54b_badSink(unsigned int)",
+          "  Path: Block: CWE190_Integer_Overflow__unsigned_int_rand_add_54b_badSink(unsigned int):%entry",
+          "  Path: Call: CWE190_Integer_Overflow__unsigned_int_rand_add_54c_badSink(unsigned int) at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54b.c:27",
+          "  Path: Block: CWE190_Integer_Overflow__unsigned_int_rand_add_54c_badSink(unsigned int):%entry",
+          "  Path: Call: CWE190_Integer_Overflow__unsigned_int_rand_add_54d_badSink(unsigned int) at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54c.c:27",
+          "  Path: Block: CWE190_Integer_Overflow__unsigned_int_rand_add_54d_badSink(unsigned int):%entry",
+          "  Path: Call: CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink(unsigned int) at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54d.c:27",
+          "  Path: Block: CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink(unsigned int):%entry",
+          "  Path: Risk operation:   %add = add i32 %data, 1, !dbg !322 at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54e.c:26"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE190_Integer_Overflow__unsigned_int_rand_add_54b_badSink(unsigned int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: CWE190_Integer_Overflow__unsigned_int_rand_add_54_bad(void):call ?CWE190_Integer_Overflow__unsigned_int_rand_add_54b_badSink@@YAXI@Z arg0 context=root:?CWE190_Integer_Overflow__unsigned_int_rand_add_54_bad@@YAXXZ call=?CWE190_Integer_Overflow__unsigned_int_rand_add_54_bad@@YAXXZ:call23"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__unsigned_int_rand_add_54b_badSink(unsigned int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE190_Integer_Overflow__unsigned_int_rand_add_54",
+    "cwe": 190,
+    "variant": "54"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__good.ll",
+      "--function",
+      "CWE190_Integer_Overflow__unsigned_int_rand_add_54e_goodB2GSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__good__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 23.43,
+    "side": "good",
+    "up": 0,
+    "sink": "CWE190_Integer_Overflow__unsigned_int_rand_add_54e_goodB2GSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=UnsignedWrap feasibility=scoped-unreachable status=scoped-unreachable source-type=unsigned node=#3 function=CWE190_Integer_Overflow__unsigned_int_rand_add_54e_goodB2GSink(unsigned int) context=root:?CWE190_Integer_Overflow__unsigned_int_rand_add_54d_goodB2GSink@@YAXI@Z/?CWE190_Integer_Overflow__unsigned_int_rand_add_54d_goodB2GSink@@YAXI@Z:call0 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s05/CWE190_Integer_Overflow__unsigned_int_rand_add_54e.c:51 instruction=  %add = add i32 %data, 1, !dbg !329",
+        "reason": "UnsignedWrap",
+        "status": "scoped-unreachable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__unsigned_int_rand_add_54e_goodB2GSink(unsigned int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: external call before target: printLine",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "scoped-unreachable",
+    "depth_boundaries": [
+      "  depth boundary: CWE190_Integer_Overflow__unsigned_int_rand_add_54d_goodB2GSink(unsigned int):call ?CWE190_Integer_Overflow__unsigned_int_rand_add_54e_goodB2GSink@@YAXI@Z arg0 context=root:?CWE190_Integer_Overflow__unsigned_int_rand_add_54d_goodB2GSink@@YAXI@Z call=?CWE190_Integer_Overflow__unsigned_int_rand_add_54d_goodB2GSink@@YAXI@Z:call0"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__unsigned_int_rand_add_54e_goodB2GSink(unsigned int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE190_Integer_Overflow__unsigned_int_rand_add_54",
+    "cwe": 190,
+    "variant": "54"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__good.ll",
+      "--function",
+      "CWE190_Integer_Overflow__unsigned_int_rand_add_54e_goodB2GSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__good__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 22.31,
+    "side": "good",
+    "up": 3,
+    "sink": "CWE190_Integer_Overflow__unsigned_int_rand_add_54e_goodB2GSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=UnsignedWrap feasibility=scoped-unreachable status=scoped-unreachable source-type=unsigned node=#36 function=CWE190_Integer_Overflow__unsigned_int_rand_add_54e_goodB2GSink(unsigned int) context=root:?goodB2G@@YAXXZ/?goodB2G@@YAXXZ:call23/?CWE190_Integer_Overflow__unsigned_int_rand_add_54b_goodB2GSink@@YAXI@Z:call0/?CWE190_Integer_Overflow__unsigned_int_rand_add_54c_goodB2GSink@@YAXI@Z:call0/?CWE190_Integer_Overflow__unsigned_int_rand_add_54d_goodB2GSink@@YAXI@Z:call0 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s05/CWE190_Integer_Overflow__unsigned_int_rand_add_54e.c:51 instruction=  %add = add i32 %data, 1, !dbg !329",
+        "reason": "UnsignedWrap",
+        "status": "scoped-unreachable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__unsigned_int_rand_add_54b_goodB2GSink(unsigned int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: external call before target: printLine",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "scoped-unreachable",
+    "depth_boundaries": [
+      "  depth boundary: goodB2G(void):call ?CWE190_Integer_Overflow__unsigned_int_rand_add_54b_goodB2GSink@@YAXI@Z arg0 context=root:?goodB2G@@YAXXZ call=?goodB2G@@YAXXZ:call23"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__unsigned_int_rand_add_54b_goodB2GSink(unsigned int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE190_Integer_Overflow__unsigned_int_rand_add_54",
+    "cwe": 190,
+    "variant": "54"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__short_rand_square_51__bad.ll",
+      "--function",
+      "CWE190_Integer_Overflow__short_rand_square_51b_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__short_rand_square_51__bad__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 1163.77,
+    "side": "bad",
+    "up": 0,
+    "sink": "CWE190_Integer_Overflow__short_rand_square_51b_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedOverflow feasibility=scoped-unreachable status=scoped-unreachable assumption=signed node=#35 function=CWE190_Integer_Overflow__short_rand_square_51b_badSink(short) context=root:?CWE190_Integer_Overflow__short_rand_square_51_bad@@YAXXZ/?CWE190_Integer_Overflow__short_rand_square_51_bad@@YAXXZ:call24 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s05/CWE190_Integer_Overflow__short_rand_square_51b.c:28 instruction=  %mul = mul i32 %conv, %conv1, !dbg !309",
+        "reason": "SignedOverflow",
+        "status": "scoped-unreachable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51b_badSink(short); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      },
+      {
+        "header": "Warning: ArithmeticRisk reason=UnsignedWrap feasibility=boundary-triggerable status=boundary-triggerable assumption=unsigned node=#35 function=CWE190_Integer_Overflow__short_rand_square_51b_badSink(short) context=root:?CWE190_Integer_Overflow__short_rand_square_51_bad@@YAXXZ/?CWE190_Integer_Overflow__short_rand_square_51_bad@@YAXXZ:call24 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s05/CWE190_Integer_Overflow__short_rand_square_51b.c:28 instruction=  %mul = mul i32 %conv, %conv1, !dbg !309",
+        "reason": "UnsignedWrap",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE190_Integer_Overflow__short_rand_square_51b_badSink(short).data i16 unsigned=62844 signed=-2692"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE190_Integer_Overflow__short_rand_square_51b_badSink(short)",
+          "  Path: Block: CWE190_Integer_Overflow__short_rand_square_51b_badSink(short):%entry",
+          "  Path: Risk operation:   %mul = mul i32 %conv, %conv1, !dbg !309 at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__short_rand_square_51b.c:28"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51b_badSink(short); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      },
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#36 function=CWE190_Integer_Overflow__short_rand_square_51b_badSink(short) context=root:?CWE190_Integer_Overflow__short_rand_square_51_bad@@YAXXZ/?CWE190_Integer_Overflow__short_rand_square_51_bad@@YAXXZ:call24 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s05/CWE190_Integer_Overflow__short_rand_square_51b.c:28 instruction=  %conv2 = trunc i32 %mul to i16, !dbg !309",
+        "reason": "SignedTruncationLoss",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE190_Integer_Overflow__short_rand_square_51b_badSink(short).data i16 unsigned=62047 signed=-3489"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE190_Integer_Overflow__short_rand_square_51b_badSink(short)",
+          "  Path: Block: CWE190_Integer_Overflow__short_rand_square_51b_badSink(short):%entry",
+          "  Path: Risk operation:   %conv2 = trunc i32 %mul to i16, !dbg !309 at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__short_rand_square_51b.c:28"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51b_badSink(short); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: CWE190_Integer_Overflow__short_rand_square_51_bad(void):call ?CWE190_Integer_Overflow__short_rand_square_51b_badSink@@YAXF@Z arg0 context=root:?CWE190_Integer_Overflow__short_rand_square_51_bad@@YAXXZ call=?CWE190_Integer_Overflow__short_rand_square_51_bad@@YAXXZ:call24"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51b_badSink(short); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51b_badSink(short); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51b_badSink(short); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 3,
+    "candidate_line": "Arithmetic verification: candidates=3 solver-checks=3",
+    "case": "CWE190_Integer_Overflow__short_rand_square_51",
+    "cwe": 190,
+    "variant": "51"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__short_rand_square_51__bad.ll",
+      "--function",
+      "CWE190_Integer_Overflow__short_rand_square_51b_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__short_rand_square_51__bad__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 161.75,
+    "side": "bad",
+    "up": 3,
+    "sink": "CWE190_Integer_Overflow__short_rand_square_51b_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedOverflow feasibility=unknown status=unknown assumption=signed node=#35 function=CWE190_Integer_Overflow__short_rand_square_51b_badSink(short) context=root:?CWE190_Integer_Overflow__short_rand_square_51_bad@@YAXXZ/?CWE190_Integer_Overflow__short_rand_square_51_bad@@YAXXZ:call24 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s05/CWE190_Integer_Overflow__short_rand_square_51b.c:28 instruction=  %mul = mul i32 %conv, %conv1, !dbg !309",
+        "reason": "SignedOverflow",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: risk depends on unmodeled control or operands before the target operation",
+          "  Unmodeled dependency: unmodeled return value from external call before target: rand"
+        ],
+        "unexplored": [],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: external call before target: rand",
+          "  Model note: risk depends on unmodeled control or operands before the target operation",
+          "  Model note: unmodeled return value from external call before target: rand",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      },
+      {
+        "header": "Warning: ArithmeticRisk reason=UnsignedWrap feasibility=unknown status=unknown assumption=unsigned node=#35 function=CWE190_Integer_Overflow__short_rand_square_51b_badSink(short) context=root:?CWE190_Integer_Overflow__short_rand_square_51_bad@@YAXXZ/?CWE190_Integer_Overflow__short_rand_square_51_bad@@YAXXZ:call24 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s05/CWE190_Integer_Overflow__short_rand_square_51b.c:28 instruction=  %mul = mul i32 %conv, %conv1, !dbg !309",
+        "reason": "UnsignedWrap",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: risk depends on unmodeled control or operands before the target operation",
+          "  Unmodeled dependency: unmodeled return value from external call before target: rand"
+        ],
+        "unexplored": [],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: external call before target: rand",
+          "  Model note: risk depends on unmodeled control or operands before the target operation",
+          "  Model note: unmodeled return value from external call before target: rand",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      },
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=unknown status=unknown source-type=signed node=#36 function=CWE190_Integer_Overflow__short_rand_square_51b_badSink(short) context=root:?CWE190_Integer_Overflow__short_rand_square_51_bad@@YAXXZ/?CWE190_Integer_Overflow__short_rand_square_51_bad@@YAXXZ:call24 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s05/CWE190_Integer_Overflow__short_rand_square_51b.c:28 instruction=  %conv2 = trunc i32 %mul to i16, !dbg !309",
+        "reason": "SignedTruncationLoss",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: risk depends on unmodeled control or operands before the target operation",
+          "  Unmodeled dependency: unmodeled return value from external call before target: rand"
+        ],
+        "unexplored": [],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: external call before target: rand",
+          "  Model note: risk depends on unmodeled control or operands before the target operation",
+          "  Model note: unmodeled return value from external call before target: rand",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "unknown",
+    "depth_boundaries": [],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 16,
+    "candidate_line": "Arithmetic verification: candidates=16 solver-checks=16",
+    "case": "CWE190_Integer_Overflow__short_rand_square_51",
+    "cwe": 190,
+    "variant": "51"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__short_rand_square_51__good.ll",
+      "--function",
+      "CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__short_rand_square_51__good__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 40.31,
+    "side": "good",
+    "up": 0,
+    "sink": "CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedOverflow feasibility=unknown status=unknown assumption=signed node=#39 function=CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink(short) context=root:?goodB2G@@YAXXZ/?goodB2G@@YAXXZ:call24 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s05/CWE190_Integer_Overflow__short_rand_square_51b.c:53 instruction=  %mul = mul i32 %conv3, %conv4, !dbg !317",
+        "reason": "SignedOverflow",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: risk depends on unmodeled control or operands before the target operation",
+          "  Unmodeled dependency: unmodeled return value from external call before target: llvm.abs.i32",
+          "  Unmodeled dependency: unsupported value dependency:   %conv2 = fptosi double %call1 to i32, !dbg !316 at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__short_rand_square_51b.c:51"
+        ],
+        "unexplored": [],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink(short); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: external call before target: llvm.abs.i32",
+          "  Model note: external call before target: printLine",
+          "  Model note: external call before target: sqrt",
+          "  Model note: risk depends on unmodeled control or operands before the target operation",
+          "  Model note: unmodeled return value from external call before target: llvm.abs.i32",
+          "  Model note: unsupported value dependency:   %conv2 = fptosi double %call1 to i32, !dbg !316 at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__short_rand_square_51b.c:51",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      },
+      {
+        "header": "Warning: ArithmeticRisk reason=UnsignedWrap feasibility=unknown status=unknown assumption=unsigned node=#39 function=CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink(short) context=root:?goodB2G@@YAXXZ/?goodB2G@@YAXXZ:call24 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s05/CWE190_Integer_Overflow__short_rand_square_51b.c:53 instruction=  %mul = mul i32 %conv3, %conv4, !dbg !317",
+        "reason": "UnsignedWrap",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: risk depends on unmodeled control or operands before the target operation",
+          "  Unmodeled dependency: unmodeled return value from external call before target: llvm.abs.i32",
+          "  Unmodeled dependency: unsupported value dependency:   %conv2 = fptosi double %call1 to i32, !dbg !316 at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__short_rand_square_51b.c:51"
+        ],
+        "unexplored": [],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink(short); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: external call before target: llvm.abs.i32",
+          "  Model note: external call before target: printLine",
+          "  Model note: external call before target: sqrt",
+          "  Model note: risk depends on unmodeled control or operands before the target operation",
+          "  Model note: unmodeled return value from external call before target: llvm.abs.i32",
+          "  Model note: unsupported value dependency:   %conv2 = fptosi double %call1 to i32, !dbg !316 at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__short_rand_square_51b.c:51",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      },
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=unknown status=unknown source-type=signed node=#40 function=CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink(short) context=root:?goodB2G@@YAXXZ/?goodB2G@@YAXXZ:call24 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s05/CWE190_Integer_Overflow__short_rand_square_51b.c:53 instruction=  %conv5 = trunc i32 %mul to i16, !dbg !317",
+        "reason": "SignedTruncationLoss",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: risk depends on unmodeled control or operands before the target operation",
+          "  Unmodeled dependency: unmodeled return value from external call before target: llvm.abs.i32",
+          "  Unmodeled dependency: unsupported value dependency:   %conv2 = fptosi double %call1 to i32, !dbg !316 at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__short_rand_square_51b.c:51"
+        ],
+        "unexplored": [],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink(short); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: external call before target: llvm.abs.i32",
+          "  Model note: external call before target: printLine",
+          "  Model note: external call before target: sqrt",
+          "  Model note: risk depends on unmodeled control or operands before the target operation",
+          "  Model note: unmodeled return value from external call before target: llvm.abs.i32",
+          "  Model note: unsupported value dependency:   %conv2 = fptosi double %call1 to i32, !dbg !316 at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__short_rand_square_51b.c:51",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "unknown",
+    "depth_boundaries": [
+      "  depth boundary: goodB2G(void):call ?CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink@@YAXF@Z arg0 context=root:?goodB2G@@YAXXZ call=?goodB2G@@YAXXZ:call24"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink(short); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink(short); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink(short); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 3,
+    "candidate_line": "Arithmetic verification: candidates=3 solver-checks=3",
+    "case": "CWE190_Integer_Overflow__short_rand_square_51",
+    "cwe": 190,
+    "variant": "51"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__short_rand_square_51__good.ll",
+      "--function",
+      "CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__short_rand_square_51__good__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 74.06,
+    "side": "good",
+    "up": 3,
+    "sink": "CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedOverflow feasibility=unknown status=unknown assumption=signed node=#49 function=CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink(short) context=root:?CWE190_Integer_Overflow__short_rand_square_51_good@@YAXXZ/?CWE190_Integer_Overflow__short_rand_square_51_good@@YAXXZ:call1/?goodB2G@@YAXXZ:call24 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s05/CWE190_Integer_Overflow__short_rand_square_51b.c:53 instruction=  %mul = mul i32 %conv3, %conv4, !dbg !317",
+        "reason": "SignedOverflow",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: unexplored path: target call context cannot be expanded within the selected data slice"
+        ],
+        "unexplored": [
+          "  Unexplored path: target call context cannot be expanded within the selected data slice"
+        ],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: call dependency outside selected data slice: CWE190_Integer_Overflow__short_rand_square_51_good(void)",
+          "  Model note: unexplored path: target call context cannot be expanded within the selected data slice",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      },
+      {
+        "header": "Warning: ArithmeticRisk reason=UnsignedWrap feasibility=unknown status=unknown assumption=unsigned node=#49 function=CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink(short) context=root:?CWE190_Integer_Overflow__short_rand_square_51_good@@YAXXZ/?CWE190_Integer_Overflow__short_rand_square_51_good@@YAXXZ:call1/?goodB2G@@YAXXZ:call24 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s05/CWE190_Integer_Overflow__short_rand_square_51b.c:53 instruction=  %mul = mul i32 %conv3, %conv4, !dbg !317",
+        "reason": "UnsignedWrap",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: unexplored path: target call context cannot be expanded within the selected data slice"
+        ],
+        "unexplored": [
+          "  Unexplored path: target call context cannot be expanded within the selected data slice"
+        ],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: call dependency outside selected data slice: CWE190_Integer_Overflow__short_rand_square_51_good(void)",
+          "  Model note: unexplored path: target call context cannot be expanded within the selected data slice",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      },
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=unknown status=unknown source-type=signed node=#50 function=CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink(short) context=root:?CWE190_Integer_Overflow__short_rand_square_51_good@@YAXXZ/?CWE190_Integer_Overflow__short_rand_square_51_good@@YAXXZ:call1/?goodB2G@@YAXXZ:call24 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s05/CWE190_Integer_Overflow__short_rand_square_51b.c:53 instruction=  %conv5 = trunc i32 %mul to i16, !dbg !317",
+        "reason": "SignedTruncationLoss",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: unexplored path: target call context cannot be expanded within the selected data slice"
+        ],
+        "unexplored": [
+          "  Unexplored path: target call context cannot be expanded within the selected data slice"
+        ],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: call dependency outside selected data slice: CWE190_Integer_Overflow__short_rand_square_51_good(void)",
+          "  Model note: unexplored path: target call context cannot be expanded within the selected data slice",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "unknown",
+    "depth_boundaries": [],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE190_Integer_Overflow__short_rand_square_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 16,
+    "candidate_line": "Arithmetic verification: candidates=16 solver-checks=16",
+    "case": "CWE190_Integer_Overflow__short_rand_square_51",
+    "cwe": 190,
+    "variant": "51"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_postinc_54__bad.ll",
+      "--function",
+      "CWE190_Integer_Overflow__int_rand_postinc_54e_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__int_rand_postinc_54__bad__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 21.44,
+    "side": "bad",
+    "up": 0,
+    "sink": "CWE190_Integer_Overflow__int_rand_postinc_54e_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedOverflow feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#2 function=CWE190_Integer_Overflow__int_rand_postinc_54e_badSink(int) context=root:?CWE190_Integer_Overflow__int_rand_postinc_54d_badSink@@YAXH@Z/?CWE190_Integer_Overflow__int_rand_postinc_54d_badSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s06/CWE190_Integer_Overflow__int_rand_postinc_54e.c:26 instruction=  %inc = add i32 %data, 1, !dbg !322",
+        "reason": "SignedOverflow",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE190_Integer_Overflow__int_rand_postinc_54e_badSink(int).data i32 unsigned=2147483647 signed=2147483647"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE190_Integer_Overflow__int_rand_postinc_54e_badSink(int)",
+          "  Path: Block: CWE190_Integer_Overflow__int_rand_postinc_54e_badSink(int):%entry",
+          "  Path: Risk operation:   %inc = add i32 %data, 1, !dbg !322 at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54e.c:26"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_postinc_54e_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: CWE190_Integer_Overflow__int_rand_postinc_54d_badSink(int):call ?CWE190_Integer_Overflow__int_rand_postinc_54e_badSink@@YAXH@Z arg0 context=root:?CWE190_Integer_Overflow__int_rand_postinc_54d_badSink@@YAXH@Z call=?CWE190_Integer_Overflow__int_rand_postinc_54d_badSink@@YAXH@Z:call0"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_postinc_54e_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE190_Integer_Overflow__int_rand_postinc_54",
+    "cwe": 190,
+    "variant": "54"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_postinc_54__bad.ll",
+      "--function",
+      "CWE190_Integer_Overflow__int_rand_postinc_54e_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__int_rand_postinc_54__bad__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 22.2,
+    "side": "bad",
+    "up": 3,
+    "sink": "CWE190_Integer_Overflow__int_rand_postinc_54e_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedOverflow feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#35 function=CWE190_Integer_Overflow__int_rand_postinc_54e_badSink(int) context=root:?CWE190_Integer_Overflow__int_rand_postinc_54_bad@@YAXXZ/?CWE190_Integer_Overflow__int_rand_postinc_54_bad@@YAXXZ:call23/?CWE190_Integer_Overflow__int_rand_postinc_54b_badSink@@YAXH@Z:call0/?CWE190_Integer_Overflow__int_rand_postinc_54c_badSink@@YAXH@Z:call0/?CWE190_Integer_Overflow__int_rand_postinc_54d_badSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s06/CWE190_Integer_Overflow__int_rand_postinc_54e.c:26 instruction=  %inc = add i32 %data, 1, !dbg !322",
+        "reason": "SignedOverflow",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE190_Integer_Overflow__int_rand_postinc_54b_badSink(int).data i32 unsigned=2147483647 signed=2147483647"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE190_Integer_Overflow__int_rand_postinc_54b_badSink(int)",
+          "  Path: Block: CWE190_Integer_Overflow__int_rand_postinc_54b_badSink(int):%entry",
+          "  Path: Call: CWE190_Integer_Overflow__int_rand_postinc_54c_badSink(int) at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54b.c:27",
+          "  Path: Block: CWE190_Integer_Overflow__int_rand_postinc_54c_badSink(int):%entry",
+          "  Path: Call: CWE190_Integer_Overflow__int_rand_postinc_54d_badSink(int) at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54c.c:27",
+          "  Path: Block: CWE190_Integer_Overflow__int_rand_postinc_54d_badSink(int):%entry",
+          "  Path: Call: CWE190_Integer_Overflow__int_rand_postinc_54e_badSink(int) at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54d.c:27",
+          "  Path: Block: CWE190_Integer_Overflow__int_rand_postinc_54e_badSink(int):%entry",
+          "  Path: Risk operation:   %inc = add i32 %data, 1, !dbg !322 at E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54e.c:26"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_postinc_54b_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: CWE190_Integer_Overflow__int_rand_postinc_54_bad(void):call ?CWE190_Integer_Overflow__int_rand_postinc_54b_badSink@@YAXH@Z arg0 context=root:?CWE190_Integer_Overflow__int_rand_postinc_54_bad@@YAXXZ call=?CWE190_Integer_Overflow__int_rand_postinc_54_bad@@YAXXZ:call23"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_postinc_54b_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE190_Integer_Overflow__int_rand_postinc_54",
+    "cwe": 190,
+    "variant": "54"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_postinc_54__good.ll",
+      "--function",
+      "CWE190_Integer_Overflow__int_rand_postinc_54e_goodB2GSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__int_rand_postinc_54__good__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 25.9,
+    "side": "good",
+    "up": 0,
+    "sink": "CWE190_Integer_Overflow__int_rand_postinc_54e_goodB2GSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedOverflow feasibility=scoped-unreachable status=scoped-unreachable source-type=signed node=#3 function=CWE190_Integer_Overflow__int_rand_postinc_54e_goodB2GSink(int) context=root:?CWE190_Integer_Overflow__int_rand_postinc_54d_goodB2GSink@@YAXH@Z/?CWE190_Integer_Overflow__int_rand_postinc_54d_goodB2GSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s06/CWE190_Integer_Overflow__int_rand_postinc_54e.c:53 instruction=  %inc = add i32 %data, 1, !dbg !329",
+        "reason": "SignedOverflow",
+        "status": "scoped-unreachable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_postinc_54e_goodB2GSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: external call before target: printLine",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "scoped-unreachable",
+    "depth_boundaries": [
+      "  depth boundary: CWE190_Integer_Overflow__int_rand_postinc_54d_goodB2GSink(int):call ?CWE190_Integer_Overflow__int_rand_postinc_54e_goodB2GSink@@YAXH@Z arg0 context=root:?CWE190_Integer_Overflow__int_rand_postinc_54d_goodB2GSink@@YAXH@Z call=?CWE190_Integer_Overflow__int_rand_postinc_54d_goodB2GSink@@YAXH@Z:call0"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_postinc_54e_goodB2GSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE190_Integer_Overflow__int_rand_postinc_54",
+    "cwe": 190,
+    "variant": "54"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_postinc_54__good.ll",
+      "--function",
+      "CWE190_Integer_Overflow__int_rand_postinc_54e_goodB2GSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE190_Integer_Overflow__int_rand_postinc_54__good__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 26.47,
+    "side": "good",
+    "up": 3,
+    "sink": "CWE190_Integer_Overflow__int_rand_postinc_54e_goodB2GSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedOverflow feasibility=scoped-unreachable status=scoped-unreachable source-type=signed node=#36 function=CWE190_Integer_Overflow__int_rand_postinc_54e_goodB2GSink(int) context=root:?goodB2G@@YAXXZ/?goodB2G@@YAXXZ:call23/?CWE190_Integer_Overflow__int_rand_postinc_54b_goodB2GSink@@YAXH@Z:call0/?CWE190_Integer_Overflow__int_rand_postinc_54c_goodB2GSink@@YAXH@Z:call0/?CWE190_Integer_Overflow__int_rand_postinc_54d_goodB2GSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE190_Integer_Overflow/s06/CWE190_Integer_Overflow__int_rand_postinc_54e.c:53 instruction=  %inc = add i32 %data, 1, !dbg !329",
+        "reason": "SignedOverflow",
+        "status": "scoped-unreachable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_postinc_54b_goodB2GSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: external call before target: printLine",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "scoped-unreachable",
+    "depth_boundaries": [
+      "  depth boundary: goodB2G(void):call ?CWE190_Integer_Overflow__int_rand_postinc_54b_goodB2GSink@@YAXH@Z arg0 context=root:?goodB2G@@YAXXZ call=?goodB2G@@YAXXZ:call23"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE190_Integer_Overflow__int_rand_postinc_54b_goodB2GSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE190_Integer_Overflow__int_rand_postinc_54",
+    "cwe": 190,
+    "variant": "54"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__bad.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__bad__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 21.31,
+    "side": "bad",
+    "up": 0,
+    "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#32 function=CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_badSink(int) context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad@@YAXXZ/?CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad@@YAXXZ:call23 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_rand_to_char_51b.c:27 instruction=  %conv = trunc i32 %data to i8, !dbg !308",
+        "reason": "SignedTruncationLoss",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_badSink(int).data i32 unsigned=128 signed=128"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_badSink(int)",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_badSink(int):%entry",
+          "  Path: Risk operation:   %conv = trunc i32 %data to i8, !dbg !308 at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51b.c:27"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad(void):call ?CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_badSink@@YAXH@Z arg0 context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad@@YAXXZ call=?CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad@@YAXXZ:call23"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE197_Numeric_Truncation_Error__int_rand_to_char_51",
+    "cwe": 197,
+    "variant": "51"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__bad.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__bad__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 127.64,
+    "side": "bad",
+    "up": 3,
+    "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=unknown status=unknown source-type=signed node=#32 function=CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_badSink(int) context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad@@YAXXZ/?CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad@@YAXXZ:call23 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_rand_to_char_51b.c:27 instruction=  %conv = trunc i32 %data to i8, !dbg !308",
+        "reason": "SignedTruncationLoss",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: risk depends on unmodeled control or operands before the target operation",
+          "  Unmodeled dependency: unmodeled return value from external call before target: rand"
+        ],
+        "unexplored": [],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: external call before target: rand",
+          "  Model note: risk depends on unmodeled control or operands before the target operation",
+          "  Model note: unmodeled return value from external call before target: rand",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "unknown",
+    "depth_boundaries": [],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 13,
+    "candidate_line": "Arithmetic verification: candidates=13 solver-checks=13",
+    "case": "CWE197_Numeric_Truncation_Error__int_rand_to_char_51",
+    "cwe": 197,
+    "variant": "51"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__good.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_goodG2BSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__good__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 19.08,
+    "side": "good",
+    "up": 0,
+    "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_goodG2BSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#1 function=CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_goodG2BSink(int) context=root:?goodG2B@@YAXXZ/?goodG2B@@YAXXZ:call0 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_rand_to_char_51b.c:41 instruction=  %conv = trunc i32 %data to i8, !dbg !307",
+        "reason": "SignedTruncationLoss",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_goodG2BSink(int).data i32 unsigned=128 signed=128"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_goodG2BSink(int)",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_goodG2BSink(int):%entry",
+          "  Path: Risk operation:   %conv = trunc i32 %data to i8, !dbg !307 at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51b.c:41"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_goodG2BSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: goodG2B(void):call ?CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_goodG2BSink@@YAXH@Z arg0 context=root:?goodG2B@@YAXXZ call=?goodG2B@@YAXXZ:call0"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_goodG2BSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE197_Numeric_Truncation_Error__int_rand_to_char_51",
+    "cwe": 197,
+    "variant": "51"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__good.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_goodG2BSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__good__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 15.5,
+    "side": "good",
+    "up": 3,
+    "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_goodG2BSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=unknown status=unknown source-type=signed node=#1 function=CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_goodG2BSink(int) context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_char_51_good@@YAXXZ/?CWE197_Numeric_Truncation_Error__int_rand_to_char_51_good@@YAXXZ:call0/?goodG2B@@YAXXZ:call0 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_rand_to_char_51b.c:41 instruction=  %conv = trunc i32 %data to i8, !dbg !307",
+        "reason": "SignedTruncationLoss",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: unexplored path: target call context cannot be expanded within the selected data slice"
+        ],
+        "unexplored": [
+          "  Unexplored path: target call context cannot be expanded within the selected data slice"
+        ],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: call dependency outside selected data slice: CWE197_Numeric_Truncation_Error__int_rand_to_char_51_good(void)",
+          "  Model note: unexplored path: target call context cannot be expanded within the selected data slice",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "unknown",
+    "depth_boundaries": [],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE197_Numeric_Truncation_Error__int_rand_to_char_51",
+    "cwe": 197,
+    "variant": "51"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__bad.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__bad__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 17.94,
+    "side": "bad",
+    "up": 0,
+    "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#2 function=CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink(int) context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_char_54d_badSink@@YAXH@Z/?CWE197_Numeric_Truncation_Error__int_rand_to_char_54d_badSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_rand_to_char_54e.c:27 instruction=  %conv = trunc i32 %data to i8, !dbg !323",
+        "reason": "SignedTruncationLoss",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink(int).data i32 unsigned=128 signed=128"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink(int)",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink(int):%entry",
+          "  Path: Risk operation:   %conv = trunc i32 %data to i8, !dbg !323 at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54e.c:27"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: CWE197_Numeric_Truncation_Error__int_rand_to_char_54d_badSink(int):call ?CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink@@YAXH@Z arg0 context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_char_54d_badSink@@YAXH@Z call=?CWE197_Numeric_Truncation_Error__int_rand_to_char_54d_badSink@@YAXH@Z:call0"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE197_Numeric_Truncation_Error__int_rand_to_char_54",
+    "cwe": 197,
+    "variant": "54"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__bad.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__bad__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 18.85,
+    "side": "bad",
+    "up": 3,
+    "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#35 function=CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink(int) context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_char_54_bad@@YAXXZ/?CWE197_Numeric_Truncation_Error__int_rand_to_char_54_bad@@YAXXZ:call23/?CWE197_Numeric_Truncation_Error__int_rand_to_char_54b_badSink@@YAXH@Z:call0/?CWE197_Numeric_Truncation_Error__int_rand_to_char_54c_badSink@@YAXH@Z:call0/?CWE197_Numeric_Truncation_Error__int_rand_to_char_54d_badSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_rand_to_char_54e.c:27 instruction=  %conv = trunc i32 %data to i8, !dbg !323",
+        "reason": "SignedTruncationLoss",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE197_Numeric_Truncation_Error__int_rand_to_char_54b_badSink(int).data i32 unsigned=128 signed=128"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE197_Numeric_Truncation_Error__int_rand_to_char_54b_badSink(int)",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_char_54b_badSink(int):%entry",
+          "  Path: Call: CWE197_Numeric_Truncation_Error__int_rand_to_char_54c_badSink(int) at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54b.c:28",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_char_54c_badSink(int):%entry",
+          "  Path: Call: CWE197_Numeric_Truncation_Error__int_rand_to_char_54d_badSink(int) at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54c.c:28",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_char_54d_badSink(int):%entry",
+          "  Path: Call: CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink(int) at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54d.c:28",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink(int):%entry",
+          "  Path: Risk operation:   %conv = trunc i32 %data to i8, !dbg !323 at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54e.c:27"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_54b_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: CWE197_Numeric_Truncation_Error__int_rand_to_char_54_bad(void):call ?CWE197_Numeric_Truncation_Error__int_rand_to_char_54b_badSink@@YAXH@Z arg0 context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_char_54_bad@@YAXXZ call=?CWE197_Numeric_Truncation_Error__int_rand_to_char_54_bad@@YAXXZ:call23"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_54b_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE197_Numeric_Truncation_Error__int_rand_to_char_54",
+    "cwe": 197,
+    "variant": "54"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__good.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__good__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 20.54,
+    "side": "good",
+    "up": 0,
+    "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#2 function=CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink(int) context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_char_54d_goodG2BSink@@YAXH@Z/?CWE197_Numeric_Truncation_Error__int_rand_to_char_54d_goodG2BSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_rand_to_char_54e.c:41 instruction=  %conv = trunc i32 %data to i8, !dbg !322",
+        "reason": "SignedTruncationLoss",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink(int).data i32 unsigned=128 signed=128"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink(int)",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink(int):%entry",
+          "  Path: Risk operation:   %conv = trunc i32 %data to i8, !dbg !322 at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54e.c:41"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: CWE197_Numeric_Truncation_Error__int_rand_to_char_54d_goodG2BSink(int):call ?CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink@@YAXH@Z arg0 context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_char_54d_goodG2BSink@@YAXH@Z call=?CWE197_Numeric_Truncation_Error__int_rand_to_char_54d_goodG2BSink@@YAXH@Z:call0"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE197_Numeric_Truncation_Error__int_rand_to_char_54",
+    "cwe": 197,
+    "variant": "54"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__good.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__good__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 20.0,
+    "side": "good",
+    "up": 3,
+    "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#4 function=CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink(int) context=root:?goodG2B@@YAXXZ/?goodG2B@@YAXXZ:call0/?CWE197_Numeric_Truncation_Error__int_rand_to_char_54b_goodG2BSink@@YAXH@Z:call0/?CWE197_Numeric_Truncation_Error__int_rand_to_char_54c_goodG2BSink@@YAXH@Z:call0/?CWE197_Numeric_Truncation_Error__int_rand_to_char_54d_goodG2BSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_rand_to_char_54e.c:41 instruction=  %conv = trunc i32 %data to i8, !dbg !322",
+        "reason": "SignedTruncationLoss",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE197_Numeric_Truncation_Error__int_rand_to_char_54b_goodG2BSink(int).data i32 unsigned=128 signed=128"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE197_Numeric_Truncation_Error__int_rand_to_char_54b_goodG2BSink(int)",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_char_54b_goodG2BSink(int):%entry",
+          "  Path: Call: CWE197_Numeric_Truncation_Error__int_rand_to_char_54c_goodG2BSink(int) at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54b.c:41",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_char_54c_goodG2BSink(int):%entry",
+          "  Path: Call: CWE197_Numeric_Truncation_Error__int_rand_to_char_54d_goodG2BSink(int) at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54c.c:41",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_char_54d_goodG2BSink(int):%entry",
+          "  Path: Call: CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink(int) at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54d.c:41",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink(int):%entry",
+          "  Path: Risk operation:   %conv = trunc i32 %data to i8, !dbg !322 at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54e.c:41"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_54b_goodG2BSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: goodG2B(void):call ?CWE197_Numeric_Truncation_Error__int_rand_to_char_54b_goodG2BSink@@YAXH@Z arg0 context=root:?goodG2B@@YAXXZ call=?goodG2B@@YAXXZ:call0"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_char_54b_goodG2BSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE197_Numeric_Truncation_Error__int_rand_to_char_54",
+    "cwe": 197,
+    "variant": "54"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__bad.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__bad__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 19.46,
+    "side": "bad",
+    "up": 0,
+    "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#2 function=CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_badSink(int) context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_short_52b_badSink@@YAXH@Z/?CWE197_Numeric_Truncation_Error__int_rand_to_short_52b_badSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_rand_to_short_52c.c:27 instruction=  %conv = trunc i32 %data to i16, !dbg !313",
+        "reason": "SignedTruncationLoss",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_badSink(int).data i32 unsigned=32768 signed=32768"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_badSink(int)",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_badSink(int):%entry",
+          "  Path: Risk operation:   %conv = trunc i32 %data to i16, !dbg !313 at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52c.c:27"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: CWE197_Numeric_Truncation_Error__int_rand_to_short_52b_badSink(int):call ?CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_badSink@@YAXH@Z arg0 context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_short_52b_badSink@@YAXH@Z call=?CWE197_Numeric_Truncation_Error__int_rand_to_short_52b_badSink@@YAXH@Z:call0"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE197_Numeric_Truncation_Error__int_rand_to_short_52",
+    "cwe": 197,
+    "variant": "52"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__bad.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__bad__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 133.12,
+    "side": "bad",
+    "up": 3,
+    "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=unknown status=unknown source-type=signed node=#33 function=CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_badSink(int) context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_short_52_bad@@YAXXZ/?CWE197_Numeric_Truncation_Error__int_rand_to_short_52_bad@@YAXXZ:call23/?CWE197_Numeric_Truncation_Error__int_rand_to_short_52b_badSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_rand_to_short_52c.c:27 instruction=  %conv = trunc i32 %data to i16, !dbg !313",
+        "reason": "SignedTruncationLoss",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: risk depends on unmodeled control or operands before the target operation",
+          "  Unmodeled dependency: unmodeled return value from external call before target: rand"
+        ],
+        "unexplored": [],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: external call before target: rand",
+          "  Model note: risk depends on unmodeled control or operands before the target operation",
+          "  Model note: unmodeled return value from external call before target: rand",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "unknown",
+    "depth_boundaries": [],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 13,
+    "candidate_line": "Arithmetic verification: candidates=13 solver-checks=13",
+    "case": "CWE197_Numeric_Truncation_Error__int_rand_to_short_52",
+    "cwe": 197,
+    "variant": "52"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__good.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_goodG2BSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__good__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 18.1,
+    "side": "good",
+    "up": 0,
+    "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_goodG2BSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#2 function=CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_goodG2BSink(int) context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_short_52b_goodG2BSink@@YAXH@Z/?CWE197_Numeric_Truncation_Error__int_rand_to_short_52b_goodG2BSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_rand_to_short_52c.c:41 instruction=  %conv = trunc i32 %data to i16, !dbg !312",
+        "reason": "SignedTruncationLoss",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_goodG2BSink(int).data i32 unsigned=32768 signed=32768"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_goodG2BSink(int)",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_goodG2BSink(int):%entry",
+          "  Path: Risk operation:   %conv = trunc i32 %data to i16, !dbg !312 at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52c.c:41"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_goodG2BSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: CWE197_Numeric_Truncation_Error__int_rand_to_short_52b_goodG2BSink(int):call ?CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_goodG2BSink@@YAXH@Z arg0 context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_short_52b_goodG2BSink@@YAXH@Z call=?CWE197_Numeric_Truncation_Error__int_rand_to_short_52b_goodG2BSink@@YAXH@Z:call0"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_goodG2BSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE197_Numeric_Truncation_Error__int_rand_to_short_52",
+    "cwe": 197,
+    "variant": "52"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__good.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_goodG2BSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__good__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 15.77,
+    "side": "good",
+    "up": 3,
+    "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_goodG2BSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=unknown status=unknown source-type=signed node=#2 function=CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_goodG2BSink(int) context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_short_52_good@@YAXXZ/?CWE197_Numeric_Truncation_Error__int_rand_to_short_52_good@@YAXXZ:call0/?goodG2B@@YAXXZ:call0/?CWE197_Numeric_Truncation_Error__int_rand_to_short_52b_goodG2BSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_rand_to_short_52c.c:41 instruction=  %conv = trunc i32 %data to i16, !dbg !312",
+        "reason": "SignedTruncationLoss",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: unexplored path: target call context cannot be expanded within the selected data slice"
+        ],
+        "unexplored": [
+          "  Unexplored path: target call context cannot be expanded within the selected data slice"
+        ],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: call dependency outside selected data slice: CWE197_Numeric_Truncation_Error__int_rand_to_short_52_good(void)",
+          "  Model note: unexplored path: target call context cannot be expanded within the selected data slice",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "unknown",
+    "depth_boundaries": [],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_52_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE197_Numeric_Truncation_Error__int_rand_to_short_52",
+    "cwe": 197,
+    "variant": "52"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__bad.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__bad__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 18.4,
+    "side": "bad",
+    "up": 0,
+    "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#2 function=CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink(int) context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_short_54d_badSink@@YAXH@Z/?CWE197_Numeric_Truncation_Error__int_rand_to_short_54d_badSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_rand_to_short_54e.c:27 instruction=  %conv = trunc i32 %data to i16, !dbg !323",
+        "reason": "SignedTruncationLoss",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink(int).data i32 unsigned=32768 signed=32768"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink(int)",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink(int):%entry",
+          "  Path: Risk operation:   %conv = trunc i32 %data to i16, !dbg !323 at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54e.c:27"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: CWE197_Numeric_Truncation_Error__int_rand_to_short_54d_badSink(int):call ?CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink@@YAXH@Z arg0 context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_short_54d_badSink@@YAXH@Z call=?CWE197_Numeric_Truncation_Error__int_rand_to_short_54d_badSink@@YAXH@Z:call0"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE197_Numeric_Truncation_Error__int_rand_to_short_54",
+    "cwe": 197,
+    "variant": "54"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__bad.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__bad__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 19.13,
+    "side": "bad",
+    "up": 3,
+    "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#35 function=CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink(int) context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_short_54_bad@@YAXXZ/?CWE197_Numeric_Truncation_Error__int_rand_to_short_54_bad@@YAXXZ:call23/?CWE197_Numeric_Truncation_Error__int_rand_to_short_54b_badSink@@YAXH@Z:call0/?CWE197_Numeric_Truncation_Error__int_rand_to_short_54c_badSink@@YAXH@Z:call0/?CWE197_Numeric_Truncation_Error__int_rand_to_short_54d_badSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_rand_to_short_54e.c:27 instruction=  %conv = trunc i32 %data to i16, !dbg !323",
+        "reason": "SignedTruncationLoss",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE197_Numeric_Truncation_Error__int_rand_to_short_54b_badSink(int).data i32 unsigned=32768 signed=32768"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE197_Numeric_Truncation_Error__int_rand_to_short_54b_badSink(int)",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_short_54b_badSink(int):%entry",
+          "  Path: Call: CWE197_Numeric_Truncation_Error__int_rand_to_short_54c_badSink(int) at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54b.c:28",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_short_54c_badSink(int):%entry",
+          "  Path: Call: CWE197_Numeric_Truncation_Error__int_rand_to_short_54d_badSink(int) at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54c.c:28",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_short_54d_badSink(int):%entry",
+          "  Path: Call: CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink(int) at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54d.c:28",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink(int):%entry",
+          "  Path: Risk operation:   %conv = trunc i32 %data to i16, !dbg !323 at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54e.c:27"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_54b_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: CWE197_Numeric_Truncation_Error__int_rand_to_short_54_bad(void):call ?CWE197_Numeric_Truncation_Error__int_rand_to_short_54b_badSink@@YAXH@Z arg0 context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_short_54_bad@@YAXXZ call=?CWE197_Numeric_Truncation_Error__int_rand_to_short_54_bad@@YAXXZ:call23"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_54b_badSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE197_Numeric_Truncation_Error__int_rand_to_short_54",
+    "cwe": 197,
+    "variant": "54"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__good.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__good__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 19.22,
+    "side": "good",
+    "up": 0,
+    "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#2 function=CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink(int) context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_short_54d_goodG2BSink@@YAXH@Z/?CWE197_Numeric_Truncation_Error__int_rand_to_short_54d_goodG2BSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_rand_to_short_54e.c:41 instruction=  %conv = trunc i32 %data to i16, !dbg !322",
+        "reason": "SignedTruncationLoss",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink(int).data i32 unsigned=32768 signed=32768"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink(int)",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink(int):%entry",
+          "  Path: Risk operation:   %conv = trunc i32 %data to i16, !dbg !322 at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54e.c:41"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: CWE197_Numeric_Truncation_Error__int_rand_to_short_54d_goodG2BSink(int):call ?CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink@@YAXH@Z arg0 context=root:?CWE197_Numeric_Truncation_Error__int_rand_to_short_54d_goodG2BSink@@YAXH@Z call=?CWE197_Numeric_Truncation_Error__int_rand_to_short_54d_goodG2BSink@@YAXH@Z:call0"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE197_Numeric_Truncation_Error__int_rand_to_short_54",
+    "cwe": 197,
+    "variant": "54"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__good.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__good__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 18.58,
+    "side": "good",
+    "up": 3,
+    "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#4 function=CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink(int) context=root:?goodG2B@@YAXXZ/?goodG2B@@YAXXZ:call0/?CWE197_Numeric_Truncation_Error__int_rand_to_short_54b_goodG2BSink@@YAXH@Z:call0/?CWE197_Numeric_Truncation_Error__int_rand_to_short_54c_goodG2BSink@@YAXH@Z:call0/?CWE197_Numeric_Truncation_Error__int_rand_to_short_54d_goodG2BSink@@YAXH@Z:call0 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_rand_to_short_54e.c:41 instruction=  %conv = trunc i32 %data to i16, !dbg !322",
+        "reason": "SignedTruncationLoss",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE197_Numeric_Truncation_Error__int_rand_to_short_54b_goodG2BSink(int).data i32 unsigned=32768 signed=32768"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE197_Numeric_Truncation_Error__int_rand_to_short_54b_goodG2BSink(int)",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_short_54b_goodG2BSink(int):%entry",
+          "  Path: Call: CWE197_Numeric_Truncation_Error__int_rand_to_short_54c_goodG2BSink(int) at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54b.c:41",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_short_54c_goodG2BSink(int):%entry",
+          "  Path: Call: CWE197_Numeric_Truncation_Error__int_rand_to_short_54d_goodG2BSink(int) at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54c.c:41",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_short_54d_goodG2BSink(int):%entry",
+          "  Path: Call: CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink(int) at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54d.c:41",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink(int):%entry",
+          "  Path: Risk operation:   %conv = trunc i32 %data to i16, !dbg !322 at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54e.c:41"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_54b_goodG2BSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: goodG2B(void):call ?CWE197_Numeric_Truncation_Error__int_rand_to_short_54b_goodG2BSink@@YAXH@Z arg0 context=root:?goodG2B@@YAXXZ call=?goodG2B@@YAXXZ:call0"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__int_rand_to_short_54b_goodG2BSink(int); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE197_Numeric_Truncation_Error__int_rand_to_short_54",
+    "cwe": 197,
+    "variant": "54"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__short_rand_51__bad.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__short_rand_51b_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__short_rand_51__bad__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 18.62,
+    "side": "bad",
+    "up": 0,
+    "sink": "CWE197_Numeric_Truncation_Error__short_rand_51b_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#33 function=CWE197_Numeric_Truncation_Error__short_rand_51b_badSink(short) context=root:?CWE197_Numeric_Truncation_Error__short_rand_51_bad@@YAXXZ/?CWE197_Numeric_Truncation_Error__short_rand_51_bad@@YAXXZ:call24 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_rand_51b.c:27 instruction=  %conv = trunc i16 %data to i8, !dbg !310",
+        "reason": "SignedTruncationLoss",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE197_Numeric_Truncation_Error__short_rand_51b_badSink(short).data i16 unsigned=128 signed=128"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE197_Numeric_Truncation_Error__short_rand_51b_badSink(short)",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__short_rand_51b_badSink(short):%entry",
+          "  Path: Risk operation:   %conv = trunc i16 %data to i8, !dbg !310 at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s02\\CWE197_Numeric_Truncation_Error__short_rand_51b.c:27"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51b_badSink(short); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: CWE197_Numeric_Truncation_Error__short_rand_51_bad(void):call ?CWE197_Numeric_Truncation_Error__short_rand_51b_badSink@@YAXF@Z arg0 context=root:?CWE197_Numeric_Truncation_Error__short_rand_51_bad@@YAXXZ call=?CWE197_Numeric_Truncation_Error__short_rand_51_bad@@YAXXZ:call24"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51b_badSink(short); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE197_Numeric_Truncation_Error__short_rand_51",
+    "cwe": 197,
+    "variant": "51"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__short_rand_51__bad.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__short_rand_51b_badSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__short_rand_51__bad__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 139.15,
+    "side": "bad",
+    "up": 3,
+    "sink": "CWE197_Numeric_Truncation_Error__short_rand_51b_badSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=unknown status=unknown source-type=signed node=#33 function=CWE197_Numeric_Truncation_Error__short_rand_51b_badSink(short) context=root:?CWE197_Numeric_Truncation_Error__short_rand_51_bad@@YAXXZ/?CWE197_Numeric_Truncation_Error__short_rand_51_bad@@YAXXZ:call24 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_rand_51b.c:27 instruction=  %conv = trunc i16 %data to i8, !dbg !310",
+        "reason": "SignedTruncationLoss",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: risk depends on unmodeled control or operands before the target operation",
+          "  Unmodeled dependency: unmodeled return value from external call before target: rand"
+        ],
+        "unexplored": [],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: external call before target: rand",
+          "  Model note: risk depends on unmodeled control or operands before the target operation",
+          "  Model note: unmodeled return value from external call before target: rand",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "unknown",
+    "depth_boundaries": [],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51_bad(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 14,
+    "candidate_line": "Arithmetic verification: candidates=14 solver-checks=14",
+    "case": "CWE197_Numeric_Truncation_Error__short_rand_51",
+    "cwe": 197,
+    "variant": "51"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__short_rand_51__good.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__short_rand_51b_goodG2BSink",
+      "--param-name",
+      "data",
+      "--up",
+      "0",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__short_rand_51__good__up0.log",
+    "exit_code": 0,
+    "elapsed_ms": 18.09,
+    "side": "good",
+    "up": 0,
+    "sink": "CWE197_Numeric_Truncation_Error__short_rand_51b_goodG2BSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=boundary-triggerable status=boundary-triggerable source-type=signed node=#1 function=CWE197_Numeric_Truncation_Error__short_rand_51b_goodG2BSink(short) context=root:?goodG2B@@YAXXZ/?goodG2B@@YAXXZ:call0 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_rand_51b.c:41 instruction=  %conv = trunc i16 %data to i8, !dbg !309",
+        "reason": "SignedTruncationLoss",
+        "status": "boundary-triggerable",
+        "unmodeled": [],
+        "unexplored": [],
+        "boundary_input": [
+          "  Boundary input CWE197_Numeric_Truncation_Error__short_rand_51b_goodG2BSink(short).data i16 unsigned=128 signed=128"
+        ],
+        "path": [
+          "  Path: Boundary entry: CWE197_Numeric_Truncation_Error__short_rand_51b_goodG2BSink(short)",
+          "  Path: Block: CWE197_Numeric_Truncation_Error__short_rand_51b_goodG2BSink(short):%entry",
+          "  Path: Risk operation:   %conv = trunc i16 %data to i8, !dbg !309 at E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s02\\CWE197_Numeric_Truncation_Error__short_rand_51b.c:41"
+        ],
+        "model_notes": [
+          "  Model note: Origin remains a function-entry boundary, including for roots with no retained callers. No source-confirmed classification is inferred.",
+          "  Model note: The target operation's own no-wrap/exact conditions were not assumed when checking its failure; earlier execution conditions remain enforced.",
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51b_goodG2BSink(short); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "boundary-triggerable",
+    "depth_boundaries": [
+      "  depth boundary: goodG2B(void):call ?CWE197_Numeric_Truncation_Error__short_rand_51b_goodG2BSink@@YAXF@Z arg0 context=root:?goodG2B@@YAXXZ call=?goodG2B@@YAXXZ:call0"
+    ],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51b_goodG2BSink(short); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE197_Numeric_Truncation_Error__short_rand_51",
+    "cwe": 197,
+    "variant": "51"
+  },
+  {
+    "command": [
+      "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+      "verify",
+      "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__short_rand_51__good.ll",
+      "--function",
+      "CWE197_Numeric_Truncation_Error__short_rand_51b_goodG2BSink",
+      "--param-name",
+      "data",
+      "--up",
+      "3",
+      "--down",
+      "3",
+      "--report-level",
+      "5"
+    ],
+    "log": "logs\\CWE197_Numeric_Truncation_Error__short_rand_51__good__up3.log",
+    "exit_code": 0,
+    "elapsed_ms": 15.33,
+    "side": "good",
+    "up": 3,
+    "sink": "CWE197_Numeric_Truncation_Error__short_rand_51b_goodG2BSink",
+    "parameter": "data",
+    "target_warnings": [
+      {
+        "header": "Warning: ArithmeticRisk reason=SignedTruncationLoss feasibility=unknown status=unknown source-type=signed node=#1 function=CWE197_Numeric_Truncation_Error__short_rand_51b_goodG2BSink(short) context=root:?CWE197_Numeric_Truncation_Error__short_rand_51_good@@YAXXZ/?CWE197_Numeric_Truncation_Error__short_rand_51_good@@YAXXZ:call0/?goodG2B@@YAXXZ:call0 source=E:/Juliet/C/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_rand_51b.c:41 instruction=  %conv = trunc i16 %data to i8, !dbg !309",
+        "reason": "SignedTruncationLoss",
+        "status": "unknown",
+        "unmodeled": [
+          "  Unmodeled dependency: unexplored path: target call context cannot be expanded within the selected data slice"
+        ],
+        "unexplored": [
+          "  Unexplored path: target call context cannot be expanded within the selected data slice"
+        ],
+        "boundary_input": [],
+        "path": [],
+        "model_notes": [
+          "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed.",
+          "  Model note: call dependency outside selected data slice: CWE197_Numeric_Truncation_Error__short_rand_51_good(void)",
+          "  Model note: unexplored path: target call context cannot be expanded within the selected data slice",
+          "  Model note: Verification is limited to the union of selected parameter dependency contexts. Control-only helper calls outside that slice remain unmodeled."
+        ]
+      }
+    ],
+    "overall": "unknown",
+    "depth_boundaries": [],
+    "verification_roots": [
+      "  Model note: Verification root: CWE197_Numeric_Truncation_Error__short_rand_51_good(void); integer entry inputs use their full bit-width domains. Constraints before this boundary are not assumed."
+    ],
+    "all_warning_count": 1,
+    "candidate_line": "Arithmetic verification: candidates=1 solver-checks=1",
+    "case": "CWE197_Numeric_Truncation_Error__short_rand_51",
+    "cwe": 197,
+    "variant": "51"
+  }
+]
