@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+build/
+build-*/
+dist/
+examples/*.ll
+/third_party/downloads/
+/third_party/llvm-23.1.4/
+
+# Evaluation reports and scripts are tracked; generated logs and IR are not.
+eval/**/logs/
+eval/**/ir/
+eval/**/*.log
+eval/**/*.ll
+eval/**/*.bc

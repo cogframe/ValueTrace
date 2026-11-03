@@ -1,0 +1,1553 @@
+{
+  "started_utc": "2026-11-02T15:22:31.044826+00:00",
+  "clang_version": "clang version 23.1.4 (https://github.com/llvm/llvm-project 7a941dfb2877a0b8cf30323fefa85ad019e0b0f5)",
+  "valuetrace_exe": "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+  "valuetrace_build_local_time": "2026-11-02T20:30:46.632470",
+  "cases": [
+    {
+      "name": "CWE190_Integer_Overflow__int_rand_add_51",
+      "cwe": 190,
+      "variant": "51",
+      "sources": [
+        "E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s04\\CWE190_Integer_Overflow__int_rand_add_51a.c",
+        "E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s04\\CWE190_Integer_Overflow__int_rand_add_51b.c"
+      ],
+      "runs": [
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_add_51__bad.ll",
+            "--function",
+            "CWE190_Integer_Overflow__int_rand_add_51b_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__int_rand_add_51__bad__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 21.71,
+          "side": "bad",
+          "up": 0,
+          "sink": "CWE190_Integer_Overflow__int_rand_add_51b_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_add_51__bad.ll",
+            "--function",
+            "CWE190_Integer_Overflow__int_rand_add_51b_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__int_rand_add_51__bad__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 129.91,
+          "side": "bad",
+          "up": 3,
+          "sink": "CWE190_Integer_Overflow__int_rand_add_51b_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_add_51__good.ll",
+            "--function",
+            "CWE190_Integer_Overflow__int_rand_add_51b_goodB2GSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__int_rand_add_51__good__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 25.5,
+          "side": "good",
+          "up": 0,
+          "sink": "CWE190_Integer_Overflow__int_rand_add_51b_goodB2GSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_add_51__good.ll",
+            "--function",
+            "CWE190_Integer_Overflow__int_rand_add_51b_goodB2GSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__int_rand_add_51__good__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 61.26,
+          "side": "good",
+          "up": 3,
+          "sink": "CWE190_Integer_Overflow__int_rand_add_51b_goodB2GSink",
+          "parameter": "data"
+        }
+      ],
+      "bad_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s04\\CWE190_Integer_Overflow__int_rand_add_51a.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s04\\CWE190_Integer_Overflow__int_rand_add_51b.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_add_51__bad.ll' -Link -Define 'OMITGOOD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__int_rand_add_51__bad.log",
+        "exit_code": 0,
+        "elapsed_ms": 754.28
+      },
+      "bad_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_add_51__bad.ll",
+          "--function",
+          "CWE190_Integer_Overflow__int_rand_add_51b_badSink"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__int_rand_add_51__bad__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 12.98
+      },
+      "good_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s04\\CWE190_Integer_Overflow__int_rand_add_51a.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s04\\CWE190_Integer_Overflow__int_rand_add_51b.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_add_51__good.ll' -Link -Define 'OMITBAD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__int_rand_add_51__good.log",
+        "exit_code": 0,
+        "elapsed_ms": 721.68
+      },
+      "good_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_add_51__good.ll",
+          "--function",
+          "CWE190_Integer_Overflow__int_rand_add_51b_goodB2GSink"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__int_rand_add_51__good__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 9.81
+      }
+    },
+    {
+      "name": "CWE190_Integer_Overflow__int_rand_multiply_52",
+      "cwe": 190,
+      "variant": "52",
+      "sources": [
+        "E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s04\\CWE190_Integer_Overflow__int_rand_multiply_52a.c",
+        "E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s04\\CWE190_Integer_Overflow__int_rand_multiply_52b.c",
+        "E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s04\\CWE190_Integer_Overflow__int_rand_multiply_52c.c"
+      ],
+      "runs": [
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_multiply_52__bad.ll",
+            "--function",
+            "CWE190_Integer_Overflow__int_rand_multiply_52c_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__int_rand_multiply_52__bad__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 23.7,
+          "side": "bad",
+          "up": 0,
+          "sink": "CWE190_Integer_Overflow__int_rand_multiply_52c_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_multiply_52__bad.ll",
+            "--function",
+            "CWE190_Integer_Overflow__int_rand_multiply_52c_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__int_rand_multiply_52__bad__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 271.57,
+          "side": "bad",
+          "up": 3,
+          "sink": "CWE190_Integer_Overflow__int_rand_multiply_52c_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_multiply_52__good.ll",
+            "--function",
+            "CWE190_Integer_Overflow__int_rand_multiply_52c_goodB2GSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__int_rand_multiply_52__good__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 31.76,
+          "side": "good",
+          "up": 0,
+          "sink": "CWE190_Integer_Overflow__int_rand_multiply_52c_goodB2GSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_multiply_52__good.ll",
+            "--function",
+            "CWE190_Integer_Overflow__int_rand_multiply_52c_goodB2GSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__int_rand_multiply_52__good__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 61.2,
+          "side": "good",
+          "up": 3,
+          "sink": "CWE190_Integer_Overflow__int_rand_multiply_52c_goodB2GSink",
+          "parameter": "data"
+        }
+      ],
+      "bad_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s04\\CWE190_Integer_Overflow__int_rand_multiply_52a.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s04\\CWE190_Integer_Overflow__int_rand_multiply_52b.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s04\\CWE190_Integer_Overflow__int_rand_multiply_52c.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_multiply_52__bad.ll' -Link -Define 'OMITGOOD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__int_rand_multiply_52__bad.log",
+        "exit_code": 0,
+        "elapsed_ms": 925.31
+      },
+      "bad_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_multiply_52__bad.ll",
+          "--function",
+          "CWE190_Integer_Overflow__int_rand_multiply_52c_badSink"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__int_rand_multiply_52__bad__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 9.53
+      },
+      "good_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s04\\CWE190_Integer_Overflow__int_rand_multiply_52a.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s04\\CWE190_Integer_Overflow__int_rand_multiply_52b.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s04\\CWE190_Integer_Overflow__int_rand_multiply_52c.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_multiply_52__good.ll' -Link -Define 'OMITBAD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__int_rand_multiply_52__good.log",
+        "exit_code": 0,
+        "elapsed_ms": 941.35
+      },
+      "good_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_multiply_52__good.ll",
+          "--function",
+          "CWE190_Integer_Overflow__int_rand_multiply_52c_goodB2GSink"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__int_rand_multiply_52__good__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 10.08
+      }
+    },
+    {
+      "name": "CWE190_Integer_Overflow__unsigned_int_rand_add_54",
+      "cwe": 190,
+      "variant": "54",
+      "sources": [
+        "E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54a.c",
+        "E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54b.c",
+        "E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54c.c",
+        "E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54d.c",
+        "E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54e.c"
+      ],
+      "runs": [
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__bad.ll",
+            "--function",
+            "CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__bad__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 18.32,
+          "side": "bad",
+          "up": 0,
+          "sink": "CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__bad.ll",
+            "--function",
+            "CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__bad__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 19.05,
+          "side": "bad",
+          "up": 3,
+          "sink": "CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__good.ll",
+            "--function",
+            "CWE190_Integer_Overflow__unsigned_int_rand_add_54e_goodB2GSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__good__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 23.43,
+          "side": "good",
+          "up": 0,
+          "sink": "CWE190_Integer_Overflow__unsigned_int_rand_add_54e_goodB2GSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__good.ll",
+            "--function",
+            "CWE190_Integer_Overflow__unsigned_int_rand_add_54e_goodB2GSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__good__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 22.31,
+          "side": "good",
+          "up": 3,
+          "sink": "CWE190_Integer_Overflow__unsigned_int_rand_add_54e_goodB2GSink",
+          "parameter": "data"
+        }
+      ],
+      "bad_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54a.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54b.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54c.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54d.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54e.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__bad.ll' -Link -Define 'OMITGOOD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__bad.log",
+        "exit_code": 0,
+        "elapsed_ms": 1292.22
+      },
+      "bad_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__bad.ll",
+          "--function",
+          "CWE190_Integer_Overflow__unsigned_int_rand_add_54e_badSink"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__bad__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 10.29
+      },
+      "good_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54a.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54b.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54c.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54d.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__unsigned_int_rand_add_54e.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__good.ll' -Link -Define 'OMITBAD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__good.log",
+        "exit_code": 0,
+        "elapsed_ms": 1310.44
+      },
+      "good_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__good.ll",
+          "--function",
+          "CWE190_Integer_Overflow__unsigned_int_rand_add_54e_goodB2GSink"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__unsigned_int_rand_add_54__good__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 9.86
+      }
+    },
+    {
+      "name": "CWE190_Integer_Overflow__short_rand_square_51",
+      "cwe": 190,
+      "variant": "51",
+      "sources": [
+        "E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__short_rand_square_51a.c",
+        "E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__short_rand_square_51b.c"
+      ],
+      "runs": [
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__short_rand_square_51__bad.ll",
+            "--function",
+            "CWE190_Integer_Overflow__short_rand_square_51b_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__short_rand_square_51__bad__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 1163.77,
+          "side": "bad",
+          "up": 0,
+          "sink": "CWE190_Integer_Overflow__short_rand_square_51b_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__short_rand_square_51__bad.ll",
+            "--function",
+            "CWE190_Integer_Overflow__short_rand_square_51b_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__short_rand_square_51__bad__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 161.75,
+          "side": "bad",
+          "up": 3,
+          "sink": "CWE190_Integer_Overflow__short_rand_square_51b_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__short_rand_square_51__good.ll",
+            "--function",
+            "CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__short_rand_square_51__good__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 40.31,
+          "side": "good",
+          "up": 0,
+          "sink": "CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__short_rand_square_51__good.ll",
+            "--function",
+            "CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__short_rand_square_51__good__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 74.06,
+          "side": "good",
+          "up": 3,
+          "sink": "CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink",
+          "parameter": "data"
+        }
+      ],
+      "bad_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__short_rand_square_51a.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__short_rand_square_51b.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__short_rand_square_51__bad.ll' -Link -Define 'OMITGOOD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__short_rand_square_51__bad.log",
+        "exit_code": 0,
+        "elapsed_ms": 802.44
+      },
+      "bad_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__short_rand_square_51__bad.ll",
+          "--function",
+          "CWE190_Integer_Overflow__short_rand_square_51b_badSink"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__short_rand_square_51__bad__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 9.75
+      },
+      "good_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__short_rand_square_51a.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s05\\CWE190_Integer_Overflow__short_rand_square_51b.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__short_rand_square_51__good.ll' -Link -Define 'OMITBAD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__short_rand_square_51__good.log",
+        "exit_code": 0,
+        "elapsed_ms": 759.45
+      },
+      "good_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__short_rand_square_51__good.ll",
+          "--function",
+          "CWE190_Integer_Overflow__short_rand_square_51b_goodB2GSink"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__short_rand_square_51__good__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 10.84
+      }
+    },
+    {
+      "name": "CWE190_Integer_Overflow__int_rand_postinc_54",
+      "cwe": 190,
+      "variant": "54",
+      "sources": [
+        "E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54a.c",
+        "E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54b.c",
+        "E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54c.c",
+        "E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54d.c",
+        "E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54e.c"
+      ],
+      "runs": [
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_postinc_54__bad.ll",
+            "--function",
+            "CWE190_Integer_Overflow__int_rand_postinc_54e_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__int_rand_postinc_54__bad__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 21.44,
+          "side": "bad",
+          "up": 0,
+          "sink": "CWE190_Integer_Overflow__int_rand_postinc_54e_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_postinc_54__bad.ll",
+            "--function",
+            "CWE190_Integer_Overflow__int_rand_postinc_54e_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__int_rand_postinc_54__bad__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 22.2,
+          "side": "bad",
+          "up": 3,
+          "sink": "CWE190_Integer_Overflow__int_rand_postinc_54e_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_postinc_54__good.ll",
+            "--function",
+            "CWE190_Integer_Overflow__int_rand_postinc_54e_goodB2GSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__int_rand_postinc_54__good__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 25.9,
+          "side": "good",
+          "up": 0,
+          "sink": "CWE190_Integer_Overflow__int_rand_postinc_54e_goodB2GSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_postinc_54__good.ll",
+            "--function",
+            "CWE190_Integer_Overflow__int_rand_postinc_54e_goodB2GSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE190_Integer_Overflow__int_rand_postinc_54__good__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 26.47,
+          "side": "good",
+          "up": 3,
+          "sink": "CWE190_Integer_Overflow__int_rand_postinc_54e_goodB2GSink",
+          "parameter": "data"
+        }
+      ],
+      "bad_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54a.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54b.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54c.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54d.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54e.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_postinc_54__bad.ll' -Link -Define 'OMITGOOD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__int_rand_postinc_54__bad.log",
+        "exit_code": 0,
+        "elapsed_ms": 1332.57
+      },
+      "bad_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_postinc_54__bad.ll",
+          "--function",
+          "CWE190_Integer_Overflow__int_rand_postinc_54e_badSink"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__int_rand_postinc_54__bad__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 9.92
+      },
+      "good_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54a.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54b.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54c.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54d.c,E:\\Juliet\\C\\testcases\\CWE190_Integer_Overflow\\s06\\CWE190_Integer_Overflow__int_rand_postinc_54e.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_postinc_54__good.ll' -Link -Define 'OMITBAD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__int_rand_postinc_54__good.log",
+        "exit_code": 0,
+        "elapsed_ms": 1314.79
+      },
+      "good_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE190_Integer_Overflow__int_rand_postinc_54__good.ll",
+          "--function",
+          "CWE190_Integer_Overflow__int_rand_postinc_54e_goodB2GSink"
+        ],
+        "log": "prep\\CWE190_Integer_Overflow__int_rand_postinc_54__good__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 9.92
+      }
+    },
+    {
+      "name": "CWE197_Numeric_Truncation_Error__int_rand_to_char_51",
+      "cwe": 197,
+      "variant": "51",
+      "sources": [
+        "E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51a.c",
+        "E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51b.c"
+      ],
+      "runs": [
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__bad.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__bad__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 21.31,
+          "side": "bad",
+          "up": 0,
+          "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__bad.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__bad__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 127.64,
+          "side": "bad",
+          "up": 3,
+          "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__good.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_goodG2BSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__good__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 19.08,
+          "side": "good",
+          "up": 0,
+          "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_goodG2BSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__good.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_goodG2BSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__good__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 15.5,
+          "side": "good",
+          "up": 3,
+          "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_goodG2BSink",
+          "parameter": "data"
+        }
+      ],
+      "bad_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51a.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51b.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__bad.ll' -Link -Define 'OMITGOOD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__bad.log",
+        "exit_code": 0,
+        "elapsed_ms": 751.34
+      },
+      "bad_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__bad.ll",
+          "--function",
+          "CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_badSink"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__bad__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 9.89
+      },
+      "good_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51a.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51b.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__good.ll' -Link -Define 'OMITBAD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__good.log",
+        "exit_code": 0,
+        "elapsed_ms": 740.23
+      },
+      "good_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__good.ll",
+          "--function",
+          "CWE197_Numeric_Truncation_Error__int_rand_to_char_51b_goodG2BSink"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__int_rand_to_char_51__good__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 9.55
+      }
+    },
+    {
+      "name": "CWE197_Numeric_Truncation_Error__int_rand_to_char_54",
+      "cwe": 197,
+      "variant": "54",
+      "sources": [
+        "E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54a.c",
+        "E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54b.c",
+        "E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54c.c",
+        "E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54d.c",
+        "E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54e.c"
+      ],
+      "runs": [
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__bad.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__bad__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 17.94,
+          "side": "bad",
+          "up": 0,
+          "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__bad.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__bad__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 18.85,
+          "side": "bad",
+          "up": 3,
+          "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__good.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__good__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 20.54,
+          "side": "good",
+          "up": 0,
+          "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__good.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__good__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 20.0,
+          "side": "good",
+          "up": 3,
+          "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink",
+          "parameter": "data"
+        }
+      ],
+      "bad_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54a.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54b.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54c.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54d.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54e.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__bad.ll' -Link -Define 'OMITGOOD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__bad.log",
+        "exit_code": 0,
+        "elapsed_ms": 1328.53
+      },
+      "bad_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__bad.ll",
+          "--function",
+          "CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_badSink"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__bad__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 9.77
+      },
+      "good_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54a.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54b.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54c.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54d.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54e.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__good.ll' -Link -Define 'OMITBAD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__good.log",
+        "exit_code": 0,
+        "elapsed_ms": 1327.83
+      },
+      "good_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__good.ll",
+          "--function",
+          "CWE197_Numeric_Truncation_Error__int_rand_to_char_54e_goodG2BSink"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__int_rand_to_char_54__good__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 10.93
+      }
+    },
+    {
+      "name": "CWE197_Numeric_Truncation_Error__int_rand_to_short_52",
+      "cwe": 197,
+      "variant": "52",
+      "sources": [
+        "E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52a.c",
+        "E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52b.c",
+        "E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52c.c"
+      ],
+      "runs": [
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__bad.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__bad__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 19.46,
+          "side": "bad",
+          "up": 0,
+          "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__bad.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__bad__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 133.12,
+          "side": "bad",
+          "up": 3,
+          "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__good.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_goodG2BSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__good__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 18.1,
+          "side": "good",
+          "up": 0,
+          "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_goodG2BSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__good.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_goodG2BSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__good__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 15.77,
+          "side": "good",
+          "up": 3,
+          "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_goodG2BSink",
+          "parameter": "data"
+        }
+      ],
+      "bad_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52a.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52b.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52c.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__bad.ll' -Link -Define 'OMITGOOD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__bad.log",
+        "exit_code": 0,
+        "elapsed_ms": 919.52
+      },
+      "bad_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__bad.ll",
+          "--function",
+          "CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_badSink"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__bad__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 10.16
+      },
+      "good_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52a.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52b.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52c.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__good.ll' -Link -Define 'OMITBAD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__good.log",
+        "exit_code": 0,
+        "elapsed_ms": 920.59
+      },
+      "good_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__good.ll",
+          "--function",
+          "CWE197_Numeric_Truncation_Error__int_rand_to_short_52c_goodG2BSink"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__int_rand_to_short_52__good__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 9.77
+      }
+    },
+    {
+      "name": "CWE197_Numeric_Truncation_Error__int_rand_to_short_54",
+      "cwe": 197,
+      "variant": "54",
+      "sources": [
+        "E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54a.c",
+        "E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54b.c",
+        "E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54c.c",
+        "E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54d.c",
+        "E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54e.c"
+      ],
+      "runs": [
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__bad.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__bad__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 18.4,
+          "side": "bad",
+          "up": 0,
+          "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__bad.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__bad__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 19.13,
+          "side": "bad",
+          "up": 3,
+          "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__good.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__good__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 19.22,
+          "side": "good",
+          "up": 0,
+          "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__good.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__good__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 18.58,
+          "side": "good",
+          "up": 3,
+          "sink": "CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink",
+          "parameter": "data"
+        }
+      ],
+      "bad_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54a.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54b.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54c.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54d.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54e.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__bad.ll' -Link -Define 'OMITGOOD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__bad.log",
+        "exit_code": 0,
+        "elapsed_ms": 1318.56
+      },
+      "bad_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__bad.ll",
+          "--function",
+          "CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_badSink"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__bad__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 9.48
+      },
+      "good_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54a.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54b.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54c.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54d.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s01\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54e.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__good.ll' -Link -Define 'OMITBAD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__good.log",
+        "exit_code": 0,
+        "elapsed_ms": 1282.62
+      },
+      "good_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__good.ll",
+          "--function",
+          "CWE197_Numeric_Truncation_Error__int_rand_to_short_54e_goodG2BSink"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__int_rand_to_short_54__good__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 9.93
+      }
+    },
+    {
+      "name": "CWE197_Numeric_Truncation_Error__short_rand_51",
+      "cwe": 197,
+      "variant": "51",
+      "sources": [
+        "E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s02\\CWE197_Numeric_Truncation_Error__short_rand_51a.c",
+        "E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s02\\CWE197_Numeric_Truncation_Error__short_rand_51b.c"
+      ],
+      "runs": [
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__short_rand_51__bad.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__short_rand_51b_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__short_rand_51__bad__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 18.62,
+          "side": "bad",
+          "up": 0,
+          "sink": "CWE197_Numeric_Truncation_Error__short_rand_51b_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__short_rand_51__bad.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__short_rand_51b_badSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__short_rand_51__bad__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 139.15,
+          "side": "bad",
+          "up": 3,
+          "sink": "CWE197_Numeric_Truncation_Error__short_rand_51b_badSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__short_rand_51__good.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__short_rand_51b_goodG2BSink",
+            "--param-name",
+            "data",
+            "--up",
+            "0",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__short_rand_51__good__up0.log",
+          "exit_code": 0,
+          "elapsed_ms": 18.09,
+          "side": "good",
+          "up": 0,
+          "sink": "CWE197_Numeric_Truncation_Error__short_rand_51b_goodG2BSink",
+          "parameter": "data"
+        },
+        {
+          "command": [
+            "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+            "verify",
+            "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__short_rand_51__good.ll",
+            "--function",
+            "CWE197_Numeric_Truncation_Error__short_rand_51b_goodG2BSink",
+            "--param-name",
+            "data",
+            "--up",
+            "3",
+            "--down",
+            "3",
+            "--report-level",
+            "5"
+          ],
+          "log": "logs\\CWE197_Numeric_Truncation_Error__short_rand_51__good__up3.log",
+          "exit_code": 0,
+          "elapsed_ms": 15.33,
+          "side": "good",
+          "up": 3,
+          "sink": "CWE197_Numeric_Truncation_Error__short_rand_51b_goodG2BSink",
+          "parameter": "data"
+        }
+      ],
+      "bad_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s02\\CWE197_Numeric_Truncation_Error__short_rand_51a.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s02\\CWE197_Numeric_Truncation_Error__short_rand_51b.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__short_rand_51__bad.ll' -Link -Define 'OMITGOOD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__short_rand_51__bad.log",
+        "exit_code": 0,
+        "elapsed_ms": 740.44
+      },
+      "bad_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__short_rand_51__bad.ll",
+          "--function",
+          "CWE197_Numeric_Truncation_Error__short_rand_51b_badSink"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__short_rand_51__bad__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 10.18
+      },
+      "good_prepare": {
+        "command": [
+          "pwsh",
+          "-NoProfile",
+          "-Command",
+          "& 'E:\\ValueTrace\\scripts\\prepare-ir.ps1' -Source 'E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s02\\CWE197_Numeric_Truncation_Error__short_rand_51a.c,E:\\Juliet\\C\\testcases\\CWE197_Numeric_Truncation_Error\\s02\\CWE197_Numeric_Truncation_Error__short_rand_51b.c' -Output 'E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__short_rand_51__good.ll' -Link -Define 'OMITBAD' -Extra @('-IE:\\Juliet\\C\\testcasesupport')"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__short_rand_51__good.log",
+        "exit_code": 0,
+        "elapsed_ms": 763.27
+      },
+      "good_inspect": {
+        "command": [
+          "E:\\ValueTrace\\build-msvc\\valuetrace.exe",
+          "inspect",
+          "E:\\ValueTrace\\eval\\juliet_run1\\ir\\CWE197_Numeric_Truncation_Error__short_rand_51__good.ll",
+          "--function",
+          "CWE197_Numeric_Truncation_Error__short_rand_51b_goodG2BSink"
+        ],
+        "log": "prep\\CWE197_Numeric_Truncation_Error__short_rand_51__good__inspect.log",
+        "exit_code": 0,
+        "elapsed_ms": 9.79
+      }
+    }
+  ],
+  "finished_utc": "2026-11-02T15:22:54.504984+00:00"
+}

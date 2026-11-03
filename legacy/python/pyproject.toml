@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "valuetrace"
+version = "0.1.0"
+description = "Bounded integer propagation analysis for LLVM IR"
+requires-python = ">=3.10"
+dependencies = ["z3-solver>=4.12"]
+
+[project.scripts]
+valuetrace = "valuetrace.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
